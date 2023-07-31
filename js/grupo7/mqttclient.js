@@ -3,11 +3,11 @@
 /*################################################################################################*/
 
 //var wsbroker = "192.168.0.3";  //mqtt websocket enabled broker
-//var wsbroker = "localhost";
-var wsbroker = "0.tcp.sa.ngrok.io";
+var wsbroker = "localhost";
+//var wsbroker = "0.tcp.sa.ngrok.io";
 
-//var wsport = 8083 // port for above
-var wsport = 14792; // port for above
+var wsport = 8083 // port for above
+//var wsport = 14792; // port for above
 var client = new Paho.MQTT.Client(
 	wsbroker,
 	Number(wsport),
