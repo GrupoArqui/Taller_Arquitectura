@@ -24,26 +24,28 @@ client.onConnectionLost = function (responseObject) {
 
 client.onMessageArrived = function (message) {
 	let destination = message.destinationName;
-	if (destination === "/test_uce_monitor") {
+	if (destination === "pruebatopico") {
+		
 		let response = JSON.parse(message.payloadString);
 		dataFormat = response;
+		
 		let dataCPU = dataFormat.CPU;
-		console.log(dataFormat);
-		let dataMemoria = dataFormat.Memoria;
-		let dataDisco = dataFormat.Disco;
-		console.log(dataFormat);
-		console.log(parseFloat(dataFormat.value));
-
-		//Cargar datos CPU , Memoria y Almacenamiento
+		let dataAlmc = dataFormat.Alc;
+		let dataTpt = dataFormat.Tpt;
+		let dataCache = 		
 		addData(
-			myChart,
+			CPU,
 			parseFloat(dataCPU),
 		);
-
-		addData_memory(
-			myChartMemory,
-			parseFloat(dataMemoria),
+		addDataAlmc(
+			Almacen,
+			parseFloat(dataAlmc),
 		);
+		addDataTemp(
+			Tempera,
+			parseFloat(dataTpt),
+		);
+		
 	}
 };
 
@@ -52,7 +54,7 @@ var options = {
 	onSuccess: function () {
 		console.log("mqtt connected");
 		// Connection succeeded; subscribe to our topic, you can add multile lines of these
-		client.subscribe("/test_uce_monitor", { qos: 1 });
+		client.subscribe("pruebatopico", { qos: 1 });
 	},
 	onFailure: function (message) {
 		console.log("Connection failed: " + message.errorMessage);
@@ -66,3 +68,5 @@ function testMqtt(){
 function initMqtt() {
 	client.connect(options);
 }
+
+
