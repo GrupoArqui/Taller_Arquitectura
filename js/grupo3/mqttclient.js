@@ -4,13 +4,14 @@
 
 //var wsbroker = "192.168.0.3";  //mqtt websocket enabled broker
 //var wsbroker = "localhost";
-var wsbroker = "0.tcp.sa.ngrok.io";
+var wsbroker = "broker.hivemq.com";
 
-//var wsport = 8083 // port for above
-var wsport = 14792; // port for above
+
+var wsport = 1883 // port for above
+//var wsport = 14792; // port for above
 var client = new Paho.MQTT.Client(
 	wsbroker,
-	Number(wsport),
+	Number(8000),
 	"myclientid_" + parseInt(Math.random() * 100, 10)
 );
 
@@ -24,26 +25,53 @@ client.onConnectionLost = function (responseObject) {
 
 client.onMessageArrived = function (message) {
 	let destination = message.destinationName;
-	if (destination === "/test_uce_monitor") {
+	if (destination === "/test2023") {
 		let response = JSON.parse(message.payloadString);
 		dataFormat = response;
 		let dataCPU = dataFormat.CPU;
-		console.log(dataFormat);
 		let dataMemoria = dataFormat.Memoria;
 		let dataDisco = dataFormat.Disco;
-		console.log(dataFormat);
-		console.log(parseFloat(dataFormat.value));
+        let dataRed=dataFormat.RED;
+		console.log(dataCPU);
+		console.log(dataDisco);
+		console.log(dataMemoria);
+		//console.log(parseFloat(dataFormat.value));
 
 		//Cargar datos CPU , Memoria y Almacenamiento
-		addData(
-			myChart,
+	    		//Cargar datos CPU , Memoria y Almacenamiento
+		/*addDataCPU(
+			ChartCPU,
 			parseFloat(dataCPU),
 		);
 
-		addData_memory(
-			myChartMemory,
-			parseFloat(dataMemoria),
+		addDataRAM(
+         ChartRAM,
+		 parseFloat(dataMemoria)
+			
+		)
+
+		addDataDISCO(
+			ChartDISCO,
+			parseFloat(dataDisco.toExponential(2))
+
 		);
+		updateCPU(dataCPU)
+		updateDISCO(dataDisco)
+		updateRAM(dataMemoria)
+		updateRED(dataRed.toExponential(2))*/
+		if (typeof dataDisco !== "undefined") {
+			// Cargar datos CPU, Memoria y Almacenamiento
+			addDataCPU(ChartCPU, parseFloat(dataCPU));
+			addDataRAM(ChartRAM, parseFloat(dataMemoria));
+			addDataDISCO(ChartDISCO, parseFloat(dataDisco).toExponential(2));
+			updateCPU(dataCPU);
+			updateDISCO(dataDisco.toExponential(2));
+			updateRAM(dataMemoria);
+			updateRED(dataRed.toExponential(2));
+		} else {
+			console.log("dataDisco no está definido o no tiene un valor válido.");
+		}
+        
 	}
 };
 
@@ -52,7 +80,7 @@ var options = {
 	onSuccess: function () {
 		console.log("mqtt connected");
 		// Connection succeeded; subscribe to our topic, you can add multile lines of these
-		client.subscribe("/test_uce_monitor", { qos: 1 });
+		client.subscribe("/test2023", { qos: 1 });
 	},
 	onFailure: function (message) {
 		console.log("Connection failed: " + message.errorMessage);
