@@ -188,16 +188,18 @@
           <div class="card">
             <div class="card-header p-3 pt-2">
               <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
-                <i class="material-icons opacity-10">weekend</i>
+                <i class="material-icons opacity-10">computer</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-                <h4 class="mb-0">$53k</h4>
+                <p class="text-sm mb-0 text-capitalize">Porcentaje Uso CPU</p>
+                <h4 class="mb-0">
+                  <div id="dataCPUElement"></div>
+                </h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder"></span></p>
             </div>
           </div>
         </div>
@@ -205,16 +207,18 @@
           <div class="card">
             <div class="card-header p-3 pt-2">
               <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                <i class="material-icons opacity-10">person</i>
+                <i class="material-icons opacity-10">memory</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                <h4 class="mb-0">2,300</h4>
+                <p class="text-sm mb-0 text-capitalize">Porcentaje Uso de Memoria RAM</p>
+                <h4 class="mb-0">
+                  <div id="dataMemoryElement"></div>
+                </h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than last month</p>
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder"></span></p>
             </div>
           </div>
         </div>
@@ -222,16 +226,18 @@
           <div class="card">
             <div class="card-header p-3 pt-2">
               <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                <i class="material-icons opacity-10">person</i>
+                <i class="material-icons opacity-10">storage</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">New Clients</p>
-                <h4 class="mb-0">3,462</h4>
+                <p class="text-sm mb-0 text-capitalize">Valor de Disco Usado en GB</p>
+                <h4 class="mb-0">
+                  <div id="dataDiscoElement"></div>
+                </h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than yesterday</p>
+              <p class="mb-0"><span class="text-danger text-sm font-weight-bolder"></span></p>
             </div>
           </div>
         </div>
@@ -239,16 +245,19 @@
           <div class="card">
             <div class="card-header p-3 pt-2">
               <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
-                <i class="material-icons opacity-10">weekend</i>
+                <i class="material-icons opacity-10">router</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Sales</p>
-                <h4 class="mb-0">$103,430</h4>
+                <p class="text-sm mb-0 text-capitalize">Velocidad de Ethernet</p>
+                <h4 class="mb-0">
+                  <div id="dataVelocidadSubida"></div>
+                  <div id="dataVelocidadDescarga"></div>
+                </h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>than yesterday</p>
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder"> </span> </p>
             </div>
           </div>
         </div>
@@ -259,17 +268,17 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
                 <div class="chart">
-                  <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
+                  <canvas id="chart_bars" class="chart-canvas" height="170"></canvas>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 ">Website Views</h6>
-              <p class="text-sm ">Last Campaign Performance</p>
+              <h6 class="mb-0 ">USO CPU</h6>
+              <p class="text-sm ">Actualizacion Porcentaje de Uso del CPU</p>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm"> campaign sent 2 days ago </p>
+                <p class="mb-0 text-sm"> just updated</p>
               </div>
             </div>
           </div>
@@ -279,17 +288,17 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1">
                 <div class="chart">
-                  <canvas id="chart-line" class="chart-canvas" height="170"></canvas>
+                  <canvas id="chart_line" class="chart-canvas" height="170"></canvas>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 "> Daily Sales </h6>
-              <p class="text-sm "> (<span class="font-weight-bolder">+15%</span>) increase in today sales. </p>
+              <h6 class="mb-0 "> USO DE LA MEMORIA RAM </h6>
+              <p class="text-sm "> Actualizacion Uso de la Memoria RAM </p>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm"> updated 4 min ago </p>
+                <p class="mb-0 text-sm"> just updated </p>
               </div>
             </div>
           </div>
@@ -299,17 +308,75 @@
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
               <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
                 <div class="chart">
-                  <canvas id="chart-line-tasks" class="chart-canvas" height="170"></canvas>
+                  <canvas id="chart_line_tasks" class="chart-canvas" height="170"></canvas>
                 </div>
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 ">Completed Tasks</h6>
-              <p class="text-sm ">Last Campaign Performance</p>
+              <h6 class="mb-0 "> USO DISCO DURO </h6>
+              <p class="text-sm "> Actualizacion del Uso del Disco Duro </p>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm">just updated</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+        }
+        h1 {
+          text-align: center;
+        }
+        .caracteristicas {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 20px;
+        }
+        .caracteristica {
+          border: 1px solid #ccc;
+          padding: 10px;
+        }
+      </style>
+      <div class="row mt-4">
+        <div class="col-lg-8 col-md-6 md-0 mb-4">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="row">
+                <div class="col-lg-6 col-7">
+                  <!--
+                  <h1>Características del PC</h1>
+                  <div class="caracteristicas">
+                    <div class="caracteristica">
+                      <h3>Procesador</h3>
+                      <p>Intel Core i7-10700K</p>
+                    </div>
+                    <div class="caracteristica">
+                      <h3>Memoria RAM</h3>
+                      <p>16 GB DDR4 a 3200 MHz</p>
+                    </div>
+                    <div class="caracteristica">
+                      <h3>Tarjeta gráfica</h3>
+                      <p>NVIDIA GeForce RTX 3070</p>
+                    </div>
+                    <div class="caracteristica">
+                      <h3>Almacenamiento</h3>
+                      <p>SSD 1TB</p>
+                    </div>
+                    <div class="caracteristica">
+                      <h3>Sistema operativo</h3>
+                      <p>Windows 10 Pro</p>
+                    </div>
+                    <div class="caracteristica">
+                      <h3>Puertos USB</h3>
+                      <p>4 puertos USB 3.1, 2 puertos USB 2.0</p>
+                    </div>
+                  -->
+                  </div>
               </div>
             </div>
           </div>
@@ -669,6 +736,7 @@
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
@@ -916,6 +984,7 @@
       },
     });
   </script>
+  -->
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
