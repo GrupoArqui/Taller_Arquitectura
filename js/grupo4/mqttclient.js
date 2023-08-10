@@ -23,7 +23,7 @@ let dataCache =  esto lo almaceno en un etiqueta laben, o como mdoificar un equi
 
 client.onMessageArrived = function (message) {
 	let destination = message.destinationName;
-	if (destination === "pruebatopico") {
+	if (destination === "pruebatopicoT") {
 		
 		let response = JSON.parse(message.payloadString);
 		dataFormat = response;
@@ -96,7 +96,7 @@ var options = {
 	onSuccess: function () {
 		console.log("mqtt connected");
 		// Connection succeeded; subscribe to our topic, you can add multile lines of these
-		client.subscribe("pruebatopico", { qos: 1 });
+		client.subscribe("pruebatopicoT", { qos: 1 });
 	},
 	onFailure: function (message) {
 		console.log("Connection failed: " + message.errorMessage);
