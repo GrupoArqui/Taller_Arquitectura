@@ -36,6 +36,13 @@ client.onMessageArrived = function (message) {
         let dataMemoria = dataFormat.Memoria;
         let dataDisco = dataFormat.Disco;
         let dataRecepcion = dataFormat.Recepcion;
+        
+        //info pc
+        document.getElementById("arquitecturaValue").innerText = response.Arquitectura;
+        document.getElementById("sistemaValue").innerText = response.Sistema;
+        document.getElementById("ramValue").innerText = response.Ram;
+        document.getElementById("procesadorValue").innerText = response.Procesador;
+        document.getElementById("almacenamientoValue").innerText = response.Almacenamiento;
 
         // Calcular la diferencia con respecto al valor anterior
         let diffCPU = dataCPU - prevCPUValue;
