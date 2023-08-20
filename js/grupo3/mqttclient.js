@@ -6,17 +6,16 @@
 //var wsbroker = "localhost";
 var wsbroker = "broker.hivemq.com";
 
-
 var wsport = 1883 // port for above
 //var wsport = 14792; // port for above
 var client = new Paho.MQTT.Client(
-	wsbroker,
-	Number(8000),
-	"myclientid_" + parseInt(Math.random() * 100, 10)
+    wsbroker,
+    Number(8000),
+    "myclientid_" + parseInt(Math.random() * 100, 10)
 );
 
 client.onConnectionLost = function (responseObject) {
-	console.log("connection lost: " + responseObject.errorMessage);
+    console.log("connection lost: " + responseObject.errorMessage);
 };
 
 /*################################################################################################*/
@@ -24,73 +23,91 @@ client.onConnectionLost = function (responseObject) {
 /*################################################################################################*/
 
 client.onMessageArrived = function (message) {
-	let destination = message.destinationName;
-	if (destination === "/test2023") {
-		let response = JSON.parse(message.payloadString);
-		dataFormat = response;
-		let dataCPU = dataFormat.CPU;
-		let dataMemoria = dataFormat.Memoria;
-		let dataDisco = dataFormat.Disco;
+    let destination = message.destinationName;
+    if (destination === "/test2023") {
+        let response = JSON.parse(message.payloadString);
+        dataFormat = response;
+        let dataCPU = dataFormat.CPU;
+        let dataMemoria = dataFormat.Memoria;
+        let dataDisco = dataFormat.Disco;
         let dataRed=dataFormat.RED;
-		console.log(dataCPU);
-		console.log(dataDisco);
-		console.log(dataMemoria);
-		//console.log(parseFloat(dataFormat.value));
+        let dataOS=dataFormat.OS;
+        let dataVersion=dataFormat.Version;
+        let dataArquitectura=dataFormat.Arquitectura;
+        let dataRAM=dataFormat.RAM;
+        let dataAlmacenamiento=dataFormat.Almacenamiento;
+        let dataProcesador=dataFormat.Procesador;
+        console.log(dataOS)
+        console.log(dataVersion)
+        console.log(dataArquitectura)
+        console.log(dataRAM)
+        console.log(dataAlmacenamiento)
+        console.log(dataProcesador)
+        console.log(dataCPU);
+        console.log(dataDisco);
+        console.log(dataMemoria);
+        console.log(dataRed)
+        //console.log(parseFloat(dataFormat.value));
 
-		//Cargar datos CPU , Memoria y Almacenamiento
-	    		//Cargar datos CPU , Memoria y Almacenamiento
-		/*addDataCPU(
-			ChartCPU,
-			parseFloat(dataCPU),
-		);
+        //Cargar datos CPU , Memoria y Almacenamiento
+                //Cargar datos CPU , Memoria y Almacenamiento
+        /*addDataCPU(
+            ChartCPU,
+            parseFloat(dataCPU),
+        );
 
-		addDataRAM(
+        addDataRAM(
          ChartRAM,
-		 parseFloat(dataMemoria)
-			
-		)
+         parseFloat(dataMemoria)
+            
+        )
 
-		addDataDISCO(
-			ChartDISCO,
-			parseFloat(dataDisco.toExponential(2))
+        addDataDISCO(
+            ChartDISCO,
+            parseFloat(dataDisco.toExponential(2))
 
-		);
-		updateCPU(dataCPU)
-		updateDISCO(dataDisco)
-		updateRAM(dataMemoria)
-		updateRED(dataRed.toExponential(2))*/
-		if (typeof dataDisco !== "undefined") {
-			// Cargar datos CPU, Memoria y Almacenamiento
-			addDataCPU(ChartCPU, parseFloat(dataCPU));
-			addDataRAM(ChartRAM, parseFloat(dataMemoria));
-			addDataDISCO(ChartDISCO, parseFloat(dataDisco).toExponential(2));
-			updateCPU(dataCPU);
-			updateDISCO(dataDisco.toExponential(2));
-			updateRAM(dataMemoria);
-			updateRED(dataRed.toExponential(2));
-		} else {
-			console.log("dataDisco no está definido o no tiene un valor válido.");
-		}
+        );
+        updateCPU(dataCPU)
+        updateDISCO(dataDisco)
+        updateRAM(dataMemoria)
+        updateRED(dataRed.toExponential(2))*/
+        if (typeof dataDisco !== "undefined") {
+            // Cargar datos CPU, Memoria y Almacenamiento
+            addDataCPU(ChartCPU, parseFloat(dataCPU));
+            addDataRAM(ChartRAM, parseFloat(dataMemoria));
+            addDataDISCO(ChartDISCO, parseFloat(dataDisco).toExponential(2));
+            updateCPU(dataCPU);
+            updateDISCO(dataDisco.toExponential(2));
+            updateRAM(dataMemoria);
+            updateRED(dataRed.toExponential(2));
+            updateOS(dataOS);
+            updateVersion(dataVersion);
+            updateArquitectura(dataArquitectura);
+            updateRAM2(dataRAM);
+            updateAlmacenamiento(dataAlmacenamiento);
+            updateProcesador(dataProcesador);
+        } else {
+            console.log("dataDisco no está definido o no tiene un valor válido.");
+        }
         
-	}
+    }
 };
 
 var options = {
-	timeout: 3,
-	onSuccess: function () {
-		console.log("mqtt connected");
-		// Connection succeeded; subscribe to our topic, you can add multile lines of these
-		client.subscribe("/test2023", { qos: 1 });
-	},
-	onFailure: function (message) {
-		console.log("Connection failed: " + message.errorMessage);
-	},
+    timeout: 3,
+    onSuccess: function () {
+        console.log("mqtt connected");
+        // Connection succeeded; subscribe to our topic, you can add multile lines of these
+        client.subscribe("/test2023", { qos: 1 });
+    },
+    onFailure: function (message) {
+        console.log("Connection failed: " + message.errorMessage);
+    },
 };
 
-
 function testMqtt(){
-	console.log("hi");
+    console.log("hi");
 }
 function initMqtt() {
-	client.connect(options);
+    client.connect(options);
 }
