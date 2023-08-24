@@ -60,7 +60,9 @@
 
   <link rel="icon" type="image/x-icon" href="./image/presion-arterial.png">
 
-
+  <!-- Esto es para la notificacion popup -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -194,7 +196,6 @@
           </ol>
           <h6 class="font-weight-bolder mb-0">Grupo 4</h6>
         </nav>
-     
       </div>
     </nav>
     <!-- End Navbar -->
@@ -210,6 +211,7 @@
                 <p class="text-sm mb-0 text-capitalize">CPU</p>
                 <h4 class="mb-0" id="cpuValue">0%</h4>
               </div>
+              <!--Espacio para la notificación-->
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
@@ -434,13 +436,14 @@
                     <p class="text-secondary font-weight-bold text-xs mt-1 mb-0" id="RamTValue"></p>
                   </div>
                 </div>
-                
+          
               </div>
             </div>
           </div>
         </div>
       </div>
       <!--Fin de la tabla-->
+
     </div>
   </main>
   <!--   Core JS Files   -->
@@ -481,6 +484,7 @@
   <script type="text/javascript" src="../js/grupo4/grafico.js"></script>
   <!-- Base de datos -->
   <script type="text/javascript" src="../js/grupo4/firebase.js"></script> 
+
   
 </body>
 

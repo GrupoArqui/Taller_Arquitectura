@@ -88,7 +88,22 @@ client.onMessageArrived = function (message) {
 		//Usuario
 		let dateUsr = dataUsr.toLocaleString();
 		document.getElementById('usrValue').innerText = dateUsr;
+
+		//NOTIFICACION POPUP
+		const cpuValueElement = document.getElementById("cpuValue");
+		const cpuValue = parseFloat(cpuValueElement.textContent);
+		if (cpuValue > 90) {
+		// Mostrar la notificación popup
+			Swal.fire({
+				icon: " !! PELIGRO !! ",
+				title: "USO DE CPU DEMASIADO ALTO",
+				text: `El porcentaje de uso de la CPU ha excedido el 90% (${cpuValue}%).`,
+				confirmButtonText: "Cerrar",
+			});
+		}
+
 	}
+
 };
 
 var options = {

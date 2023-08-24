@@ -196,3 +196,4 @@ function addDataTemp(chart3, dataS3) {
 	chart3.data.datasets[1].data.push(40);
 	chart3.update();
 }
+
