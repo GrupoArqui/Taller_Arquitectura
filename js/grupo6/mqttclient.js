@@ -72,6 +72,13 @@ client.onMessageArrived = function (message) {
     addData(myChart, parseFloat(dataCPU));
     addData(myChartMemory, parseFloat(dataMemoria));
     addData(myChartDisk, parseFloat(dataDisk));
+
+    /*Verificar uso de memoria ram y lanzar alerta*/
+    const valorAlertaRam = 60;
+
+    if (parseFloat(dataMemoria.toFixed(2)) > valorAlertaRam) {
+      alert("¡Alerta! Uso alto de memoria RAM.");
+    }
   }
 };
 
