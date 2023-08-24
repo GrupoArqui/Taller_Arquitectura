@@ -28,6 +28,32 @@ client.onMessageArrived = function (message) {
   if (destination === "grupo6_arquitectura") {
     let response = JSON.parse(message.payloadString);
     dataFormat = response;
+
+    let sistema = dataFormat.Sistema;
+    let cpu_info = dataFormat.Cpu_info;
+    let ram_info = dataFormat.Ram_info;
+    let disco_espacio = dataFormat.Disco_espacio;
+    let tipo_sistema = dataFormat.Tipo_sistema;
+
+    const sistemaElement = document.getElementById("sistemaElement");
+    sistemaElement.textContent = sistema;
+
+    const cpu_infoElement = document.getElementById("cpu_infoElement");
+    cpu_infoElement.textContent = cpu_info;
+
+    const ram_infoElement = document.getElementById("ram_infoElement");
+    ram_infoElement.textContent = ram_info;
+
+    const disco_espacioElement = document.getElementById(
+      "disco_espacioElement"
+    );
+    disco_espacioElement.textContent = disco_espacio;
+
+    const tipo_sistemaElement = document.getElementById("tipo_sistemaElement");
+    tipo_sistemaElement.textContent = tipo_sistema;
+
+    /*#PRIMER COMENTARIO##*/
+
     let dataCPU = dataFormat.CPU;
     let dataMemoria = dataFormat.Memoria;
     let dataDisk = dataFormat.Disco;
