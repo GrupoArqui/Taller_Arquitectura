@@ -60,16 +60,12 @@ $(document).ready(function () {
         var wsData = [ // Datos para la hoja de trabajo
             ["Fecha", "Hora", "CPU", "Memoria", "Disco", "RED"], // Encabezado
         ];
-    
-        // Llamada a la función getTableData() para obtener los datos de la tabla
-        var tableData = getTableData(); // Asumiendo que existe la función getTableData()
-    
-        // Agregar los datos de la tabla al arreglo wsData
+        var tableData = getTableData(); 
         wsData = wsData.concat(tableData);
     
         // Crear una hoja de trabajo y asignar los datos
         var ws = XLSX.utils.aoa_to_sheet(wsData);
-        XLSX.utils.book_append_sheet(wb, ws, "Hoja1"); // Agregar la hoja de trabajo al libro
+        XLSX.utils.book_append_sheet(wb, ws, "Hoja1"); 
     
         // Generar el archivo Excel
         var wbout = XLSX.write(wb, { bookType: "xlsx", bookSST: true, type: "binary" });
