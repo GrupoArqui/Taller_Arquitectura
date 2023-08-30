@@ -1,232 +1,175 @@
-const ctx = document.getElementById("myChartCPU").getContext("2d");
+/*################################################################################################*/
+/*####################################### DESPLIEGUE DEL GRAFICO #################################*/
+/*################################################################################################*/
+
+const ctx = document.getElementById("chart_bars").getContext("2d");
+
 let labels_n = [];
-let data_n = [];
-let myChartCPU = new Chart(ctx, {
-	type: "line",
-	data: {
-	  labels: labels_n,
-	  datasets: [{
-		label: "CPU",
-		data: data_n,
-		backgroundColor: "rgba(139, 0, 0, 0.2)",
-		borderColor: "rgb(139, 0, 0)",
-		borderWidth: 1,
-	  }],
-	},
-	options: {
-	  scales: {
-		y: {
-		  beginAtZero: true,
-		  grid: {
-			drawBorder: false,
-			color: 'rgba(255, 255, 255, .2)'
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
-			},
-		  }
-		},
-		x: {
-		  grid: {
-			drawBorder: false,
-			display: false,
-			drawOnChartArea: false,
-			drawTicks: false,
-			borderDash: [5, 5]
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
-			},
-		  }
-		},
-	  },
-	},
-  });
-
-  function addData(chart, dataS) {
-	let today = new Date();
-	let date =
-	  today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  
-	// Limit the number of data points to 6
-	if (chart.data.labels.length >= 6) {
-	  chart.data.labels.shift();
-	  chart.data.datasets[0].data.shift();
-	}
-  
-	// Add new data point
-	chart.data.labels.push(date);
-	chart.data.datasets[0].data.push(dataS);
-	chart.update();
-  }
-const ctx2 = document.getElementById("myChartMemory").getContext("2d");
-let labels_n2 = [];
+let data_n =   [];
+let data_n2 =  [];
 let data_n3 = [];
-let myChartMemory = new Chart(ctx2, {
+let data_n4 = [];
+let chart_bars = new Chart(ctx, {
 	type: "line",
 	data: {
-	  labels: labels_n2,
-	  datasets: [{
-		label: "Capacidad de Memoria",
-		data: data_n3,
-		backgroundColor: "rgba(0, 0, 0, 0.2)",
-		borderColor: "rgb(0, 0, 0)",
-		borderWidth: 1,
-	  }],
+		labels: labels_n,
+		datasets: [
+			{
+				label: "CPU",
+				data: data_n,
+				backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+				borderColor: ["rgba(255, 99, 132, 1)"],
+				borderWidth: 1,
+			},
+			{
+				label: "Base Line",
+				data: data_n2,
+				backgroundColor: ["rgba(0, 0, 255, 0.2)"],
+				borderColor: ["rgba(0, 0, 255,1)"],
+				borderWidth: 1,
+			}
+		],
 	},
 	options: {
-	  scales: {
-		y: {
-		  beginAtZero: true,
-		  grid: {
-			drawBorder: false,
-			color: 'rgba(255, 255, 255, .2)'
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
+		scales: {
+			y: {
+				beginAtZero: true,
 			},
-		  }
 		},
-		x: {
-		  grid: {
-			drawBorder: false,
-			display: false,
-			drawOnChartArea: false,
-			drawTicks: false,
-			borderDash: [5, 5]
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
-			},
-		  }
-		},
-	  },
 	},
-  });
-  function addData2(chart, data1) {
-	let today = new Date();
-	let date =
-	  today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  
-	// Limit the number of data points to 6
-	if (chart.data.labels.length >= 6) {
-	  chart.data.labels.shift();
-	  chart.data.datasets[0].data.shift();
-	}
-  
-	// Add new data point
-	chart.data.labels.push(date);
-	chart.data.datasets[0].data.push(data1);
-	chart.update();
-  }
-  
-const ctx3 = document.getElementById("myChartDisk").getContext("2d");
-let labels_n3 = [];
-let data_n5 = [];
-let myChartDisk = new Chart(ctx3, {
-	type: "line",
-	data: {
-	  labels: labels_n3,
-	  datasets: [{
-		label: "Disco",
-		data: data_n5,
-		backgroundColor: "rgba(153, 102, 255, 0.2)",
-		borderColor: "rgb(153, 102, 255)",
-		borderWidth: 1,
-	  }],
-	},
-	options: {
-	  scales: {
-		y: {
-		  beginAtZero: true,
-		  grid: {
-			drawBorder: false,
-			color: 'rgba(255, 255, 255, .2)'
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
-			},
-		  }
-		},
-		x: {
-		  grid: {
-			drawBorder: false,
-			display: false,
-			drawOnChartArea: false,
-			drawTicks: false,
-			borderDash: [5, 5]
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
-			},
-		  }
-		},
-	  },
-	},
-  });
+});
 
-  function addData3(chart, data1, data2) {
+const ctz = document.getElementById("chart_line").getContext("2d");
+
+let labels_n_memory = [];
+let data_n_memory   =   [];
+let data_n2_memory=  [];
+let data_n3_memory= [];
+let data_n4_memory= [];
+
+let chart_line = new Chart(ctz, {
+	type: "line",
+	data: {
+		labels: labels_n_memory,
+		datasets: [
+			{
+				label: "RAM",
+				data: data_n_memory,
+				backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+				borderColor: ["rgba(255, 99, 132, 1)"],
+				borderWidth: 1,
+			},
+			{
+				label: "Base Line",
+				data: data_n2_memory,
+				backgroundColor: ["rgba(0, 0, 255, 0.2)"],
+				borderColor: ["rgba(0, 0, 255,1)"],
+				borderWidth: 1,
+			}
+		],
+	},
+	options: {
+		scales: {
+			y: {
+				beginAtZero: true,
+			},
+		},
+	},
+});
+
+const cty = document.getElementById("chart_line_tasks").getContext("2d");
+
+let labels_n_disco = [];
+let data_n_disco   =   [];
+let data_n2_disco=  [];
+let data_n3_disco= [];
+let data_n4_disco= [];
+
+let chart_line_tasks = new Chart(cty, {
+	type: "line",
+	data: {
+		labels: labels_n_disco,
+		datasets: [
+			{
+				label: "DISCO DURO",
+				data: data_n_disco,
+				backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+				borderColor: ["rgba(255, 99, 132, 1)"],
+				borderWidth: 1,
+			},
+			{
+				label: "Base Line",
+				data: data_n2_disco,
+				backgroundColor: ["rgba(0, 0, 255, 0.2)"],
+				borderColor: ["rgba(0, 0, 255,1)"],
+				borderWidth: 1,
+			}
+		],
+	},
+	options: {
+		scales: {
+			y: {
+				beginAtZero: true,
+			},
+		},
+	},
+});
+
+function addData(chart, dataS) {
+    let today = new Date();
+    let date =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    // Limitar a un máximo de 10 datos
+    if (labels_n.length >= 10) {
+        labels_n.shift(); // Eliminar el dato más antiguo
+        data_n.shift();
+        data_n2.shift();
+    }
+
+    // Datos recolectados del sensor
+    labels_n.push(date);
+    data_n.push(dataS);
+    data_n2.push(40);
+    chart.update();
+}
+
+function addData_Memory(chart, dataS) {
+
 	let today = new Date();
-	let date =
-	  today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  
-	// Limit the number of data points to 6
-	if (chart.data.labels.length >= 6) {
-	  chart.data.labels.shift();
-	  chart.data.datasets[0].data.shift();
-	}
-  
-	// Add new data point
-	chart.data.labels.push(date);
-	chart.data.datasets[0].data.push(data1);
-	chart.update();
-	
-  }
+    let date =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    // Limitar a un máximo de 10 datos
+    if (labels_n_memory.length >= 10) {
+        labels_n_memory.shift(); // Eliminar el dato más antiguo
+        data_n_memory.shift();
+        data_n2_memory.shift();
+    }
+
+    // Datos recolectados del sensor
+    labels_n_memory.push(date);
+    data_n_memory.push(dataS);
+    data_n2_memory.push(40);
+    chart.update();
+}
+
+function addData_Disco(chart, dataS) {
+
+	let today = new Date();
+    let date =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    // Limitar a un máximo de 10 datos
+    if (labels_n_disco.length >= 10) {
+        labels_n_disco.shift(); // Eliminar el dato más antiguo
+        data_n_disco.shift();
+        data_n2_disco.shift();
+    }
+
+    // Datos recolectados del sensor
+    labels_n_disco.push(date);
+    data_n_disco.push(dataS);
+    data_n2_disco.push(40);
+    chart.update();
+}
