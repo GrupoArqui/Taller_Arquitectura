@@ -116,37 +116,60 @@ let Grafica3 = new Chart(cty, {
 });
 
 function addData(chart, dataS) {
+    let today = new Date();
+    let date =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-	let today = new Date();
-	let date =
-		today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-	// Datos recolectados del sensor
-	chart.data.labels.push(date);
-chart.data.datasets[0].data.push(dataS);
-chart.data.datasets[1].data.push(40);
-	chart.update();
+    // Limitar a un máximo de 10 datos
+    if (labels_n.length >= 10) {
+        labels_n.shift(); // Eliminar el dato más antiguo
+        data_n.shift();
+        data_n2.shift();
+    }
+
+    // Datos recolectados del sensor
+    labels_n.push(date);
+    data_n.push(dataS);
+    data_n2.push(40);
+    chart.update();
 }
 
 function addData_Memory(chart, dataS) {
 
 	let today = new Date();
-	let date =
-		today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-	// Datos recolectados del sensor
-	chart.data.labels.push(date);
-chart.data.datasets[0].data.push(dataS);
-chart.data.datasets[1].data.push(40);
-	chart.update();
+    let date =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    // Limitar a un máximo de 10 datos
+    if (labels_n_memory.length >= 10) {
+        labels_n_memory.shift(); // Eliminar el dato más antiguo
+        data_n_memory.shift();
+        data_n2_memory.shift();
+    }
+
+    // Datos recolectados del sensor
+    labels_n_memory.push(date);
+    data_n_memory.push(dataS);
+    data_n2_memory.push(40);
+    chart.update();
 }
 
 function addData_Disco(chart, dataS) {
 
 	let today = new Date();
-	let date =
-		today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-	// Datos recolectados del sensor
-	chart.data.labels.push(date);
-    chart.data.datasets[0].data.push(dataS);
-    chart.data.datasets[1].data.push(40);
-	chart.update();
+    let date =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+    // Limitar a un máximo de 10 datos
+    if (labels_n_disco.length >= 10) {
+        labels_n_disco.shift(); // Eliminar el dato más antiguo
+        data_n_disco.shift();
+        data_n2_disco.shift();
+    }
+
+    // Datos recolectados del sensor
+    labels_n_disco.push(date);
+    data_n_disco.push(dataS);
+    data_n2_disco.push(40);
+    chart.update();
 }
