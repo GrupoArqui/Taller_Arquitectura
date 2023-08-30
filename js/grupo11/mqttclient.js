@@ -9,7 +9,7 @@ var wsbroker = "broker.hivemq.com";
 
 
 var wsport = 1883; // port for above
-//var wsport = 8083 // port for above
+//var wsport = 8083 // port foorr above
 //var wsport = 14792; // port for above
 var client = new Paho.MQTT.Client(
 	wsbroker,
