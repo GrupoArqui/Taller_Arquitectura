@@ -252,7 +252,7 @@
               <p class="mb-0" style="font-size: 16px;" ><span class="text-danger text-sm font-weight-bolder"></span> Memoria Utilizada</p>
             </div>
           </div>
-        </div>
+        </div>        
         <div class="col-xl-3 col-sm-6">
           <div class="card">
             <div class="card-header p-3 pt-2">
@@ -271,6 +271,83 @@
           </div>
         </div>
       </div>
+
+      <h5 class="font-weight-bolder text-center my-4">Bateria</h5>
+      <p></p>
+        <div class="row">
+          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+              <div class="card-header p-3 pt-2">
+                <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                  <i class="material-icons opacity-10">assignment</i>
+                </div>
+                <div class="text-end pt-1">
+                  <p class="text-sm mb-0 text-capitalize">ID bateria</p>
+                  <h4 class="mb-0" id="IDValue">-</h4>
+                </div>
+                <!--Espacio para la notificación-->
+              </div>
+              <hr class="dark horizontal my-0">
+              <div class="card-footer p-3">
+                <p class="mb-0" style="font-size: 16px;" ><span class="text-success text-sm font-weight-bolder"></span>ID de la bateria </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+              <div class="card-header p-3 pt-2">
+                <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
+                  <i class="material-icons opacity-10">battery_charging_full</i>
+                </div>
+                <div class="text-end pt-1">
+                  <p class="text-sm mb-0 text-capitalize">Porcentaje</p>
+                  <h4 class="mb-0" id="porcentajeValue">0%</h4>
+                </div>
+              </div>
+              <hr class="dark horizontal my-0">
+              <div class="card-footer p-3">
+                <p class="mb-0" style="font-size: 16px;" ><span class="text-success text-sm font-weight-bolder"></span>Porcentaje de la bateria</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+            <div class="card">
+              <div class="card-header p-3 pt-2">
+                <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                  <i class="material-icons opacity-10">battery_unknown</i>
+                </div>
+                <div class="text-end pt-1">
+                  <p class="text-sm mb-0 text-capitalize">Estado</p>
+                  <h4 class="mb-0" id="estadoValue">-</h4>
+                </div>
+              </div>
+              <hr class="dark horizontal my-0">
+              <div class="card-footer p-3">
+                <p class="mb-0" style="font-size: 16px;" ><span class="text-danger text-sm font-weight-bolder"></span> Estado de la batería</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6">
+            <div class="card">
+              <div class="card-header p-3 pt-2">
+                <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+                  <i class="material-icons opacity-10">flash_on</i>
+                </div>
+                <div class="text-end pt-1">
+                  <p class="text-sm mb-0 text-capitalize">Voltaje</p>
+                  <h4 class="mb-0" id="voltValue">0V</h4>
+                </div>
+              </div>
+
+              <hr class="dark horizontal my-0">
+              <div class="card-footer p-3">
+                <p class="mb-0" style="font-size: 16px;" ><span class="text-success text-sm font-weight-bolder"></span>Voltaje de la batería</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       <div class="row mt-4">
         <div class="col-lg-4 col-md-6 mt-4 mb-4">
           <div class="card z-index-2 ">
@@ -333,7 +410,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row mb-4">
         <!-- Tabla y base de datos-->
         <div class="col-lg-8 col-md-6 mb-md-0 mb-4">

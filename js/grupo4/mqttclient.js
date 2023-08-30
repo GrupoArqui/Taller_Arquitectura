@@ -39,6 +39,11 @@ client.onMessageArrived = function (message) {
 		let dataNucle = dataFormat.Nucle;
 		let dataArqM = dataFormat.ArqM;
 		let dataUsr = dataFormat.Usr;
+
+		let dataID=dataFormat.bateria_id;
+		let dataPorcentaje=dataFormat.bateria_porcentaje;
+		let dataEstado=dataFormat.estado_bateria;
+		let dataVoltaje=dataFormat.voltaje;
 		
 		addData(
 			CPU,
@@ -88,6 +93,18 @@ client.onMessageArrived = function (message) {
 		//Usuario
 		let dateUsr = dataUsr.toLocaleString();
 		document.getElementById('usrValue').innerText = dateUsr;
+		//Datos de la bateria
+		let dateID = dataID.toLocaleString();
+        document.getElementById('IDValue').innerText = dateID;
+
+		let datePorcentaje = dataPorcentaje.toLocaleString() + ' %';
+        document.getElementById('porcentajeValue').innerText = datePorcentaje;
+
+		let dateEstado = dataEstado.toLocaleString();
+        document.getElementById('estadoValue').innerText = dateEstado;
+
+		let dateVoltaje = dataVoltaje.toLocaleString() + ' V';
+        document.getElementById('voltValue').innerText = dateVoltaje;
 
 		//NOTIFICACION POPUP
 		const cpuValueElement = document.getElementById("cpuValue");
