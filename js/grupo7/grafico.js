@@ -1,233 +1,228 @@
+/*################################################################################################*/
+/*####################################### DESPLIEGUE DEL GRAFICO #################################*/
+/*################################################################################################*/
 
-const ctx = document.getElementById("myChartCPU").getContext("2d");
+const cpuSpan = document.getElementById("cpuValue");
+
+// Función para actualizar el valor del CPU, MEMORIA Y DISCO en el span
+function updateCPUValue(value) {
+  cpuSpan.textContent = value; 
+}
+
+function updateMemoryValue(value) {
+	const memorySpan = document.getElementById("memoryValue");
+	memorySpan.textContent = value;
+}
+
+function updateDiskValue(value) {
+	const diskSpan = document.getElementById("diskValue");
+	diskSpan.textContent = value;
+}
+
+function updateNetworkValue(value) {
+    const networkSpan = document.getElementById("networkValue");
+    networkSpan.textContent = value + " B";
+}
+
+function updateSystemValue(value) {
+	const diskSpan = document.getElementById("systemValue");
+	diskSpan.textContent = value;
+}
+
+function updateTotalMemoryValue(value) {
+	const diskSpan = document.getElementById("totalMemoryValue");
+	diskSpan.textContent = value +" GB";
+}
+function updateTotalStorageValue(value) {
+	const diskSpan = document.getElementById("totalStorageValue");
+	diskSpan.textContent = value +" GB";
+}
+
+
+
+
+const ctx = document.getElementById("chart-bars").getContext("2d");
 let labels_n = [];
 let data_n = [];
-let myChartCPU = new Chart(ctx, {
+let data_n2 = [];
+let data_n3 = [];
+let data_n4 = [];
+let myChart = new Chart(ctx, {
 	type: "line",
 	data: {
-	  labels: labels_n,
-	  datasets: [{
-		label: "CPU",
-		data: data_n,
-		backgroundColor: "rgba(139, 0, 0, 0.2)",
-		borderColor: "rgb(139, 0, 0)",
-		borderWidth: 1,
-	  }],
+		labels: labels_n,
+		datasets: [
+			{
+				label: "CPU",
+				data: data_n,
+				backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+				borderColor: ["rgba(255, 99, 132, 1)"],
+				borderWidth: 1,
+			},
+			{
+				label: "Base Line",
+				data: data_n2,
+				backgroundColor: ["rgba(0, 0, 255, 0.2)"],
+				borderColor: ["rgba(0, 0, 255,1)"],
+				borderWidth: 1,
+			}
+		],
 	},
 	options: {
-	  scales: {
-		y: {
-		  beginAtZero: true,
-		  grid: {
-			drawBorder: false,
-			color: 'rgba(255, 255, 255, .2)'
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
+		scales: {
+			y: {
+				beginAtZero: true,
 			},
-		  }
 		},
-		x: {
-		  grid: {
-			drawBorder: false,
-			display: false,
-			drawOnChartArea: false,
-			drawTicks: false,
-			borderDash: [5, 5]
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
-			},
-		  }
-		},
-	  },
 	},
-  });
+});
 
-  function addData(chart, dataS) {
+//Segunda
+const ctx2 = document.getElementById("chart-line").getContext("2d");
+let labels2_n = [];
+let data2_n = [];
+let data2_n2 = [];
+let data2_n3 = [];
+let data2_n4 = [];
+let myChart2 = new Chart(ctx2, {
+	type: "line",
+	data: {
+		labels: labels_n,
+		datasets: [
+			{
+				label: "Memoria",
+				data: data2_n,
+				backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+				borderColor: ["rgba(255, 99, 132, 1)"],
+				borderWidth: 1,
+			},
+			{
+				label: "Base Line",
+				data: data2_n2,
+				backgroundColor: ["rgba(0, 0, 255, 0.2)"],
+				borderColor: ["rgba(0, 0, 255,1)"],
+				borderWidth: 1,
+			}
+		],
+	},
+	options: {
+		scales: {
+			y: {
+				beginAtZero: true,
+			},
+		},
+	},
+});
+
+//Tercera
+const ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
+let labels3_n = [];
+let data3_n = [];
+let data3_n2 = [];
+let data3_n3 = [];
+let data3_n4 = [];
+let myChart3 = new Chart(ctx3, {
+	type: "line",
+	data: {
+		labels: labels_n,
+		datasets: [
+			{
+				label: "Almacenamiento",
+				data: data3_n,
+				backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+				borderColor: ["rgba(255, 99, 132, 1)"],
+				borderWidth: 1,
+			},
+			{
+				label: "Base Line",
+				data: data3_n2,
+				backgroundColor: ["rgba(0, 0, 255, 0.2)"],
+				borderColor: ["rgba(0, 0, 255,1)"],
+				borderWidth: 1,
+			}
+		],
+	},
+	options: {
+		scales: {
+			y: {
+				beginAtZero: true,
+			},
+		},
+	},
+});
+
+
+function addData(chart, dataS) {
+
 	let today = new Date();
 	let date =
-	  today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  
-	// Limit the number of data points to 6
-	if (chart.data.labels.length >= 6) {
-	  chart.data.labels.shift();
-	  chart.data.datasets[0].data.shift();
-	}
-  
-	// Add new data point
+		today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	// Datos recolectados del sensor
 	chart.data.labels.push(date);
 	chart.data.datasets[0].data.push(dataS);
+	chart.data.datasets[1].data.push(40);
 	chart.update();
-  }
-const ctx2 = document.getElementById("myChartMemory").getContext("2d");
-let labels_n2 = [];
-let data_n3 = [];
-let myChartMemory = new Chart(ctx2, {
-	type: "line",
-	data: {
-	  labels: labels_n2,
-	  datasets: [{
-		label: "Memoria",
-		data: data_n3,
-		backgroundColor: "rgba(0, 0, 0, 0.2)",
-		borderColor: "rgb(0, 0, 0)",
-		borderWidth: 1,
-	  }],
-	},
-	options: {
-	  scales: {
-		y: {
-		  beginAtZero: true,
-		  grid: {
-			drawBorder: false,
-			color: 'rgba(255, 255, 255, .2)'
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
-			},
-		  }
-		},
-		x: {
-		  grid: {
-			drawBorder: false,
-			display: false,
-			drawOnChartArea: false,
-			drawTicks: false,
-			borderDash: [5, 5]
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
-			},
-		  }
-		},
-	  },
-	},
-  });
-  function addData2(chart, data1) {
-	let today = new Date();
-	let date =
-	  today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  
-	// Limit the number of data points to 6
-	if (chart.data.labels.length >= 6) {
-	  chart.data.labels.shift();
-	  chart.data.datasets[0].data.shift();
-	}
-  
-	// Add new data point
-	chart.data.labels.push(date);
-	chart.data.datasets[0].data.push(data1);
-	chart.update();
-  }
-  
-const ctx3 = document.getElementById("myChartDisk").getContext("2d");
-let labels_n3 = [];
-let data_n5 = [];
-let myChartDisk = new Chart(ctx3, {
-	type: "line",
-	data: {
-	  labels: labels_n3,
-	  datasets: [{
-		label: "Disco",
-		data: data_n5,
-		backgroundColor: "rgba(153, 102, 255, 0.2)",
-		borderColor: "rgb(153, 102, 255)",
-		borderWidth: 1,
-	  }],
-	},
-	options: {
-	  scales: {
-		y: {
-		  beginAtZero: true,
-		  grid: {
-			drawBorder: false,
-			color: 'rgba(255, 255, 255, .2)'
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
-			},
-		  }
-		},
-		x: {
-		  grid: {
-			drawBorder: false,
-			display: false,
-			drawOnChartArea: false,
-			drawTicks: false,
-			borderDash: [5, 5]
-		  },
-		  ticks: {
-			display: true,
-			color: '#f8f9fa',
-			padding: 10,
-			font: {
-			  size: 14,
-			  weight: 300,
-			  family: "Roboto",
-			  style: 'normal',
-			  lineHeight: 2
-			},
-		  }
-		},
-	  },
-	},
-  });
 
-  function addData3(chart, data1, data2) {
+	// Llamada inicial para mostrar el valor del CPU al cargar la página
+	updateCPUValue(dataS);
+}
+
+function addData_memory(chart, dataS) {
+
 	let today = new Date();
 	let date =
-	  today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-  
-	// Limit the number of data points to 6
-	if (chart.data.labels.length >= 6) {
-	  chart.data.labels.shift();
-	  chart.data.datasets[0].data.shift();
-	}
-  
-	// Add new data point
+		today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	// Datos recolectados del sensor
 	chart.data.labels.push(date);
-	chart.data.datasets[0].data.push(data1);
+	chart.data.datasets[0].data.push(dataS);
+	chart.data.datasets[1].data.push(40);
 	chart.update();
 	
-  }
+	// Llamada inicial para mostrar el valor de la MEMORIA al cargar la página
+	updateMemoryValue(dataS);
+}
+
+function addData_almacenamiento(chart, dataS) {
+
+	let today = new Date();
+	let date =
+		today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	// Datos recolectados del sensor
+	chart.data.labels.push(date);
+	chart.data.datasets[0].data.push(dataS);
+	
+	chart.data.datasets[1].data.push(40);
+	chart.update();
+
+	// Llamada inicial para mostrar el valor del DISCO al cargar la página
+	updateDiskValue(dataS);
+}
+
+function addData_network(chart, dataS) {
+    let today = new Date();
+    let date =
+        today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    // Datos recolectados del sensor
+    chart.data.labels.push(date);
+    chart.data.datasets[0].data.push(dataS);
+    chart.data.datasets[1].data.push(40);
+    chart.update();
+
+    // Llamada para mostrar el valor de la red en tiempo real
+    updateNetworkValue(dataS);
+}
+
+function addData_system(dataS) {
+	// Llamada inicial para mostrar el valor del DISCO al cargar la página
+	updateSystemValue(dataS);
+}
+
+function addData_total_memory(dataS) {
+	// Llamada inicial para mostrar el valor del DISCO al cargar la página
+	updateTotalMemoryValue(dataS);
+}
+
+function addData_total_storage(dataS) {
+	// Llamada inicial para mostrar el valor del DISCO al cargar la página
+	updateTotalStorageValue(dataS);
+}
