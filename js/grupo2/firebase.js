@@ -4,17 +4,26 @@
 
 $(document).ready(function () {
 	const config = {
-		apiKey: "AIzaSyB4XD-AIzaSyDUAEKVhvQV4g9xk5uefVGAPpRJwPFZTDs",
+		/*apiKey: "AIzaSyB4XD-AIzaSyDUAEKVhvQV4g9xk5uefVGAPpRJwPFZTDs",
 		authDomain: "presion-a3041.firebaseapp.com",
 		databaseURL: "https://presion-a3041-default-rtdb.firebaseio.com/",
 		projectId: "presion-a3041",
 		storageBucket: "presion-a3041.appspot.com",
 		messagingSenderId: "752009347781",
-		appId: "1:752009347781:web:7dc65ecf2f5bc204fe26ac",
+		appId: "1:752009347781:web:7dc65ecf2f5bc204fe26ac",*/
+
+		apiKey: "AIzaSyAwi2Uchj6--Acl-ilaZO_ReHj7wvZINbM",
+    	authDomain: "arquitectura-grupo-2-12e2b.firebaseapp.com",
+    	databaseURL: "https://arquitectura-grupo-2-12e2b-default-rtdb.firebaseio.com",
+    	projectId: "arquitectura-grupo-2-12e2b",
+    	storageBucket: "arquitectura-grupo-2-12e2b.appspot.com",
+    	messagingSenderId: "97054327515",
+    	appId: "1:97054327515:web:0e64b174892096883302fe",
+    	measurementId: "G-5TPVHDHHV6"
 	};
 	firebase.initializeApp(config); //inicializamos firebase
 	var db = firebase.database();
-	var coleccionProductos = db.ref().child("presiones");
+	var coleccionProductos = db.ref().child("datos");
 	var dataSet = []; //array para guardar los valores de los campos inputs del form
 	var table = $("#tablaProductos").DataTable({
 		pageLength: 5,
@@ -37,8 +46,10 @@ $(document).ready(function () {
 			datos.key,
 			datos.child("fecha").val(),
 			datos.child("hora").val(),
-			datos.child("presionSistolica").val(),
-			datos.child("presionDiastocia").val(),
+			datos.child("cpu").val(),
+			datos.child("memory").val(),
+			datos.child("disk").val(),
+			datos.child("cache").val(),
 		];
 		table.rows.add([dataSet]).draw();
 	});

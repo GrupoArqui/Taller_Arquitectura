@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "arquitectura-grupo-2-12e2b",
+  "private_key_id": "b06fbe3596fd485299da1144f34aca1532453f11",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDV4eAsxwtjx9Yl\nwLCvidXwJmTslaSy7akK6tilIAijSw9aXntwNpkmVG//HA3TK643K+spySE8BYIG\n7jwhBzL+CtILYbNNhoxLv06As/SqMLjFJVjEbFbqpzmqudrIM1H6sH8ueenUQ+ew\nEbDHDtwJuSexs4jNsX3qbKalUr7UhKIkBSs80fqUdbuKO8a4FBTRHvOAvnAfGXrU\nBJBQieyl4AfNMr2N4wPZJd+hjDrDypb//UaM2iwQp4XKBw9i3oeafDYs+QZ4HE1m\ngXHb0mMufRD1AfWc4fg0hCyr5fv5Zp4DJLKNbPahTyxJDBBx1U0IHkKocwUMsTeS\n77YZijD3AgMBAAECggEANoq12KVfna/hx9nWFMWhFW8tEHnuuKRLldmiqqU7Hq0u\n+pwafVinAHPK5bL5QY8ji7U68Hp2a7B54puRINkNo2QOAVIGX/A+Sbi846xAacAn\n9jpaYyi/l3JSjdt8U85mivfETw1O2E8Cv88bFgAPk7kwSqweaFnpYsUXUBSETnwW\n5jaPM0qou8RgEp+O0YDd5OK3DOjpeCRJBVyyJyp+KEYo1ZSVsMO6GPsF/wT33Yi1\nx8V/w9eL6wcsZZuObvf4w7Y3HgUf/7nxTf6P+SPoU4XP7yrCdpAuVpFa/ci/VYhu\nxuUvTws1MmYj+ti4JktZAiGtf07Fb1xX6f/r9lgSFQKBgQDrtiClcjDnk8x2wu1Q\nyWN+HAmv82VwMCB0rhPTSMQXY1F31O84K9l+Pnf70DPqT3xq9AYiiCmutfysB90d\nF2hIRMcXod8WZA91Buia+TiheatRLJWdekr8m5WYP1g0wsuhv9ekI4pYgTu4nD/X\nPUjKAAhcqVTde7CNQTYcqpNciwKBgQDoSr8WSY4mCzihkQxvEaxJM+Py7qewhGMX\nFHGtJ87R1wskGP3b3MHzg7NZ4S8oKxO8uW+ha6i4Mld4CppRWXbByWNug68Krhpa\n59oAi/L/xoJlQyG6meQOY3wjlyYwcVxWlGjktwC4pYUohpOb0FrM+pxRhzxpSxxL\nZ4hSg+kuxQKBgH26Fu3I3BcZ+ey7CrSVxzEEKZKlpEzUDuvN0ptXa+kBu/nMJZFz\nqj4xefRiWN65aSbvZLpUoM8lGVJ1m1aiHqi1rvCHEiSyWKBWgAnxt2hCKsRQoLlv\n+sGFB6U+3IDACrgLSS2vG2McA8vz5AWeFc5ReCRc2fyNtl2SFBf0UEgDAoGANdcN\nT0chMWQsbhZGgX/hJN5oGSiDqYAlz3Wnm3C8mRp0tJsuS8VxFtYRveVZnr/NRVLd\nstZXNspER8h9WBmaUvQwna7b5WfRJ/zRJItLeUkzc/EJYkzE9SjN3xnrehLsSgz/\n+vMHscR7hpcao2S5hwUXMjZcJDOKjVej2yxD4dkCgYEAkOiwqmg0sp6yDlnjb1nt\n7ykspnPW+sjEA9/gVs5ZouLF81DVDLRwMvtg7OtPlI1GoeLKKIGCDOzeesHLH3MT\nrZnjohfDqy6fkBfe7J2aeN5o7K8v9WO50spMteZXCUnkHaBeQ7JKZvk01LldpKXZ\ndsKsNRDdJGTBemT/Gk2Ho1E=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-cnxnk@arquitectura-grupo-2-12e2b.iam.gserviceaccount.com",
+  "client_id": "104163806980584905404",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-cnxnk%40arquitectura-grupo-2-12e2b.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
