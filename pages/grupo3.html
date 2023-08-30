@@ -190,13 +190,13 @@
                 <i class="material-icons opacity-10">weekend</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-                <h4 class="mb-0">$53k</h4>
+                <p class="text-sm mb-0 text-capitalize"> Disco Duro usado </p>
+                <h4  id="DISCO-value" class="mb-0"> %</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder"> </span>Porcentaje total de disco duro usado</p>
             </div>
           </div>
         </div>
@@ -207,13 +207,13 @@
                 <i class="material-icons opacity-10">person</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                <h4 class="mb-0">2,300</h4>
+                <p class="text-sm mb-0 text-capitalize">CPU rendimiento</p>
+                <h4 id="CPU-value" class="mb-0"> %</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than last month</p>
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder"> </span>Porcentaje Rendimiento del CPU</p>
             </div>
           </div>
         </div>
@@ -224,13 +224,13 @@
                 <i class="material-icons opacity-10">person</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">New Clients</p>
-                <h4 class="mb-0">3,462</h4>
+                <p class="text-sm mb-0 text-capitalize">RAM rendimiento</p>
+                <h4 id="RAM-value" class="mb-0"></h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-danger text-sm font-weight-bolder">-2%</span> than yesterday</p>
+              <p class="mb-0"><span class="text-danger text-sm font-weight-bolder"></span> Porcentaje uso de la Memoria Ram </p>
             </div>
           </div>
         </div>
@@ -241,13 +241,13 @@
                 <i class="material-icons opacity-10">weekend</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Sales</p>
-                <h4 class="mb-0">$103,430</h4>
+                <p class="text-sm mb-0 text-capitalize">RED</p>
+                <h4 id="RED-value" class="mb-0"></h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+5% </span>than yesterday</p>
+              <p class="mb-0"><span class="text-success text-sm font-weight-bolder">Megabytes enviados por la RED </p>
             </div>
           </div>
         </div>
@@ -263,16 +263,17 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 ">Website Views</h6>
-              <p class="text-sm ">Last Campaign Performance</p>
+              <h6 class="mb-0 ">Rendimiento CPU</h6>
+              <p class="text-sm ">Porcentaje de rendimiento de CPU</p>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm"> campaign sent 2 days ago </p>
+                <p class="mb-0 text-sm">Justo ahora </p>
               </div>
             </div>
           </div>
         </div>
+
         <div class="col-lg-4 col-md-6 mt-4 mb-4">
           <div class="card z-index-2  ">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 bg-transparent">
@@ -283,12 +284,13 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 "> Daily Sales </h6>
-              <p class="text-sm "> (<span class="font-weight-bolder">+15%</span>) increase in today sales. </p>
+              <h6 class="mb-0 "> Memoria RAM</h6>
+              <p class="text-sm "> Medido en bytes </p>
+              <!--(<span class="font-weight-bolder">+15%</span>) -->
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm"> updated 4 min ago </p>
+                <p class="mb-0 text-sm"> Justo ahora</p>
               </div>
             </div>
           </div>
@@ -303,12 +305,12 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 ">Completed Tasks</h6>
-              <p class="text-sm ">Last Campaign Performance</p>
+              <h6 class="mb-0 ">Disco duro</h6>
+              <p class="text-sm ">Porcentaje utilizado del disco duro</p>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-icons text-sm my-auto me-1">schedule</i>
-                <p class="mb-0 text-sm">just updated</p>
+                <p class="mb-0 text-sm">justo ahora</p>
               </div>
             </div>
           </div>
@@ -320,10 +322,10 @@
             <div class="card-header pb-0">
               <div class="row">
                 <div class="col-lg-6 col-7">
-                  <h6>Projects</h6>
+                  <h6> Medidas de uso de la computadora</h6>
                   <p class="text-sm mb-0">
                     <i class="fa fa-check text-info" aria-hidden="true"></i>
-                    <span class="font-weight-bold ms-1">30 done</span> this month
+                    <span class="font-weight-bold ms-1"> Porcentajes</span> en tiempo real
                   </p>
                 </div>
                 <div class="col-lg-6 col-5 my-auto text-end">
@@ -669,251 +671,161 @@
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <script>
-    var ctx = document.getElementById("chart-bars").getContext("2d");
+    
+  
+   /*const ctx20 = document.getElementById("chart-bars").getContext("2d");
+let labels_n = [];
+let data_n = [];
+let data_n2 = [];
+let data_n3 = [];
+let data_n4 = [];
+let myChart = new Chart(ctx20, {
+	type: "line",
+	data: {
+		labels: labels_n,
+		datasets: [
+			{
+				label: "CPU",
+				data: data_n,
+				backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+				borderColor: ["rgba(255, 99, 132, 1)"],
+				borderWidth: 1,
+			},
+			{
+				label: "Base Line",
+				data: data_n2,
+				backgroundColor: ["rgba(0, 0, 255, 0.2)"],
+				borderColor: ["rgba(0, 0, 255,1)"],
+				borderWidth: 1,
+			}
+		],
+	},
+	options: {
+		scales: {
+			y: {
+				beginAtZero: true,
+			},
+		},
+	},
+});
 
-    new Chart(ctx, {
-      type: "bar",
-      data: {
-        labels: ["M", "T", "W", "T", "F", "S", "S"],
-        datasets: [{
-          label: "Sales",
-          tension: 0.4,
-          borderWidth: 0,
-          borderRadius: 4,
-          borderSkipped: false,
-          backgroundColor: "rgba(255, 255, 255, .8)",
-          data: [50, 20, 10, 22, 50, 10, 40],
-          maxBarThickness: 6
-        }, ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              suggestedMin: 0,
-              suggestedMax: 500,
-              beginAtZero: true,
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-              color: "#fff"
-            },
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
+function addData(chart, dataS) {
+
+	let today = new Date();
+	let date =
+		today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	// Datos recolectados del sensor
+	chart.data.labels.push(date);
+	chart.data.datasets[0].data.push(dataS);
+	chart.data.datasets[1].data.push(40);
+	chart.update();
+}
 
 
-    var ctx2 = document.getElementById("chart-line").getContext("2d");
+const ctx21=document.getElementById("chart-line").getContext("2d");
+let labels_n_MEMORY = [];
+let data_n_MEMORYRY = [];
+let data_n2_MEMORRY= [];
+let data_n3_MEMORRY= [];
+let data_n4_MEMORRY= [];
 
-    new Chart(ctx2, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Mobile apps",
-          tension: 0,
-          borderWidth: 0,
-          pointRadius: 5,
-          pointBackgroundColor: "rgba(255, 255, 255, .8)",
-          pointBorderColor: "transparent",
-          borderColor: "rgba(255, 255, 255, .8)",
-          borderColor: "rgba(255, 255, 255, .8)",
-          borderWidth: 4,
-          backgroundColor: "transparent",
-          fill: true,
-          data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
-          maxBarThickness: 6
 
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
 
-    var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
+let mychartMemory = new Chart(ctx21, {
+	type: "line",
+	data: {
+		labels: labels_n_MEMORY,
+		datasets: [
+			{
+				label: "RAM",
+				data: data_n_MEMORYRY,
+				backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+				borderColor: ["rgba(255, 99, 132, 1)"],
+				borderWidth: 1,
+			},
+			{
+				label: "Base line",
+				data: data_n2_MEMORRY,
+				backgroundColor: ["rgba(0, 0, 255, 0.2)"],
+				borderColor: ["rgba(0, 0, 255,1)"],
+				borderWidth: 1,
+			}
+		],
+	},
+	options: {
+		scales: {
+			y: {
+				beginAtZero: true,
+			},
+		},
+	},
+});
 
-    new Chart(ctx3, {
-      type: "line",
-      data: {
-        labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Mobile apps",
-          tension: 0,
-          borderWidth: 0,
-          pointRadius: 5,
-          pointBackgroundColor: "rgba(255, 255, 255, .8)",
-          pointBorderColor: "transparent",
-          borderColor: "rgba(255, 255, 255, .8)",
-          borderWidth: 4,
-          backgroundColor: "transparent",
-          fill: true,
-          data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-          maxBarThickness: 6
 
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#f8f9fa',
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false,
-              borderDash: [5, 5]
-            },
-            ticks: {
-              display: true,
-              color: '#f8f9fa',
-              padding: 10,
-              font: {
-                size: 14,
-                weight: 300,
-                family: "Roboto",
-                style: 'normal',
-                lineHeight: 2
-              },
-            }
-          },
-        },
-      },
-    });
+function addData_memory(chart, dataS) {
+	let today = new Date();
+	let date =
+		today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	// Datos recolectados del sensor
+	chart.data.labels.push(date);
+    chart.data.datasets[0].data.push(dataS);
+    chart.data.datasets[1].data.push(40);
+	chart.update();
+}
+
+
+const ctx22=document.getElementById("chart-line-tasks").getContext("2d");
+let labels_n_disco = [];
+let data_n_disco  = [];
+let data_n2_disco = [];
+let data_n3_disco = [];
+let data_n4_disco = [];
+
+
+
+let myChartDisco = new Chart(ctx22, {
+	type: "line",
+	data: {
+		labels: labels_n_disco,
+		datasets: [
+			{
+				label: "Disco",
+				data: data_n_disco,
+				backgroundColor: ["rgba(255, 99, 132, 0.2)"],
+				borderColor: ["rgba(255, 99, 132, 1)"],
+				borderWidth: 1,
+			},
+			{
+				label: "Base line",
+				data: data_n2_disco,
+				backgroundColor: ["rgba(0, 0, 255, 0.2)"],
+				borderColor: ["rgba(0, 0, 255,1)"],
+				borderWidth: 1,
+			}
+		],
+	},
+	options: {
+		scales: {
+			y: {
+				beginAtZero: true,
+			},
+		},
+	},
+});
+
+function addData_disco(chart, dataS) {
+	let today = new Date();
+	let date =
+		today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	// Datos recolectados del sensor
+	chart.data.labels.push(date);
+    chart.data.datasets[0].data.push(dataS);
+    chart.data.datasets[1].data.push(40);
+	chart.update();
+}
+*/ 
+
+
   </script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -932,5 +844,4 @@
   <!-- Grafico -->
   <script type="text/javascript" src="../js/grupo3/grafico.js"></script>
 </body>
-
 </html>
