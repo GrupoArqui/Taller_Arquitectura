@@ -1,16 +1,17 @@
 /*################################################################################################*/
 /*####################################### DATA TABLE Y FIREBASE ##################################*/
 /*################################################################################################*/
-
+console.log("firebase conectado")
 $(document).ready(function () {
 	const config = {
-		apiKey: "AIzaSyB4XD-AIzaSyDUAEKVhvQV4g9xk5uefVGAPpRJwPFZTDs",
-		authDomain: "presion-a3041.firebaseapp.com",
-		databaseURL: "https://presion-a3041-default-rtdb.firebaseio.com/",
-		projectId: "presion-a3041",
-		storageBucket: "presion-a3041.appspot.com",
-		messagingSenderId: "752009347781",
-		appId: "1:752009347781:web:7dc65ecf2f5bc204fe26ac",
+		apiKey: "AIzaSyA2wVfP429fdlSjR9EroRM0kYKQ8Ddn2cM",
+		authDomain: "arquitectura-grupo-12.firebaseapp.com",
+		databaseURL: "https://arquitectura-grupo-12-default-rtdb.firebaseio.com",
+		projectId: "arquitectura-grupo-12",
+		storageBucket: "arquitectura-grupo-12.appspot.com",
+		messagingSenderId: "768591056677",
+		appId: "1:768591056677:web:efa3b2e4b1ad4964ae54cc",
+		
 	};
 	firebase.initializeApp(config); //inicializamos firebase
 	var db = firebase.database();
