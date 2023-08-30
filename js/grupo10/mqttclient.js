@@ -51,30 +51,6 @@ client.onMessageArrived = function (message) {
 		let dv1 = dataFormat.direccion_viento;
 		let it1 = dataFormat.icono_tiempo;
 
-		var icono_mapping = {
-			"01d": "../iconos/1.png",
-			"01n": "../iconos/2.png",
-			"02d": "../iconos/3.png",
-			"02n": "../iconos/4.png",
-			"03d": "../iconos/5.png",
-			"03n": "../iconos/6.png",
-			"04d": "../iconos/7.png",
-			"04n": "../iconos/8.png",
-			"09d": "../iconos/9.png",
-			"09n": "../iconos/10.png",
-			"10d": "../iconos/11.png",
-			"10n": "../iconos/12.png",
-			"11d": "../iconos/13.png",
-			"11n": "../iconos/14.png",
-			"13d": "../iconos/15.png",
-			"13n": "../iconos/16.png",
-			"50d": "../iconos/17.png",
-			"50n": "../iconos/18.png"
-		};
-
-		var icono_actual = it1;
-		var icono_url = icono_mapping[icono_actual];
-
 		console.log(dataFormat);
 		console.log(parseFloat(dataFormat.value));
 
@@ -126,10 +102,6 @@ client.onMessageArrived = function (message) {
 
 			const dataTemd  = document.getElementById("dataTemd");
 			dataTemd.textContent =  "direccion_viento: " +  dv1;
-
-			const dataTeme  = document.getElementById("dataTeme");
-			dataTeme.src = icono_url;
-			dataTeme.alt = "Icono del tiempo: " + icono_actual;
 
 
 		//Cargar datos CPU , Memoria y Almacenamiento
