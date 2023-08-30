@@ -29,7 +29,7 @@ client.onConnectionLost = function (responseObject) {
 let primero = 1;
 client.onMessageArrived = function (message) {
 	let destination = message.destinationName;
-	if (destination === "merequetengue") {
+	if (destination === "merequetengue0") {
 		let response = JSON.parse(message.payloadString);
 		dataFormat = response;
 		let dataCPU = dataFormat.CPU;
@@ -38,6 +38,43 @@ client.onMessageArrived = function (message) {
 		let dataDisco = dataFormat.Disco;
 		let dataVelocidadD = dataFormat.Descarga;
 		let dataVelocidadS = dataFormat.Subida;
+		let dataTemperaturas = dataFormat.Temperatura;
+		let A = dataFormat.a;
+		let B = dataFormat.b;
+		let C = dataFormat.c;
+		let D = dataFormat.d;
+		let E = dataFormat.e;
+		let h1 = dataFormat.humedad;
+		let p1 = dataFormat.presion;
+		let dt1 = dataFormat.descripcion_tiempo;
+		let vv1 = dataFormat.velocidad_viento;
+		let dv1 = dataFormat.direccion_viento;
+		let it1 = dataFormat.icono_tiempo;
+
+		var icono_mapping = {
+			"01d": "../iconos/1.png",
+			"01n": "../iconos/2.png",
+			"02d": "../iconos/3.png",
+			"02n": "../iconos/4.png",
+			"03d": "../iconos/5.png",
+			"03n": "../iconos/6.png",
+			"04d": "../iconos/7.png",
+			"04n": "../iconos/8.png",
+			"09d": "../iconos/9.png",
+			"09n": "../iconos/10.png",
+			"10d": "../iconos/11.png",
+			"10n": "../iconos/12.png",
+			"11d": "../iconos/13.png",
+			"11n": "../iconos/14.png",
+			"13d": "../iconos/15.png",
+			"13n": "../iconos/16.png",
+			"50d": "../iconos/17.png",
+			"50n": "../iconos/18.png"
+		};
+
+		var icono_actual = it1;
+		var icono_url = icono_mapping[icono_actual];
+
 		console.log(dataFormat);
 		console.log(parseFloat(dataFormat.value));
 
@@ -56,6 +93,44 @@ client.onMessageArrived = function (message) {
 
 			const dataVelocidadSubida = document.getElementById("dataVelocidadSubida");
 			dataVelocidadSubida.textContent = "Subida: " + dataVelocidadS.toFixed(2) + " MB";
+			
+			const dataTemperatura = document.getElementById("dataTemperatura");
+			dataTemperatura.textContent = "temperatura: " + dataTemperaturas + " °C";
+
+			const dataInfoA  = document.getElementById("dataInfoA");
+			dataInfoA.textContent =  A;
+
+			const dataInfoB  = document.getElementById("dataInfoB");
+			dataInfoB.textContent =  B;
+
+			const dataInfoC  = document.getElementById("dataInfoC");
+			dataInfoC.textContent =  C;
+
+			const dataInfoD  = document.getElementById("dataInfoD");
+			dataInfoD.textContent =  D;
+
+			const dataInfoE  = document.getElementById("dataInfoE");
+			dataInfoE.textContent =  E;
+
+			const dataTemA  = document.getElementById("dataTemA");
+			dataTemA.textContent =  "humedad: " +  h1;
+
+			const dataTemf  = document.getElementById("dataTemf");
+			dataTemf.textContent =  "presion: " +  p1;
+
+			const dataTemb  = document.getElementById("dataTemb");
+			dataTemb.textContent =  "descripcion_tiempo: " +  dt1;
+
+			const dataTemc  = document.getElementById("dataTemc");
+			dataTemc.textContent =  "velocidad_viento: " +  vv1;
+
+			const dataTemd  = document.getElementById("dataTemd");
+			dataTemd.textContent =  "direccion_viento: " +  dv1;
+
+			const dataTeme  = document.getElementById("dataTeme");
+			dataTeme.src = icono_url;
+			dataTeme.alt = "Icono del tiempo: " + icono_actual;
+
 
 		//Cargar datos CPU , Memoria y Almacenamiento
 		addData(
@@ -78,12 +153,18 @@ client.onMessageArrived = function (message) {
 	}
 };
 
+function enviarMensajeMQTT(mensajeJSON) {
+    let messageObj = new Paho.MQTT.Message(mensajeJSON);
+    messageObj.destinationName = "merequetengue3"; // Cambia al topic correcto
+    client.send(messageObj);
+}
+
 var options = {
 	timeout: 3,
 	onSuccess: function () {
 		console.log("mqtt connected");
 		// Connection succeeded; subscribe to our topic, you can add multile lines of these
-		client.subscribe("merequetengue", { qos: 1 });
+		client.subscribe("merequetengue0", { qos: 1 });
 	},
 	onFailure: function (message) {
 		console.log("Connection failed: " + message.errorMessage);
