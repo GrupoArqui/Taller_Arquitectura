@@ -23,7 +23,7 @@ let dataCache =  esto lo almaceno en un etiqueta laben, o como mdoificar un equi
 
 client.onMessageArrived = function (message) {
 	let destination = message.destinationName;
-	if (destination === "pruebatopico") {
+	if (destination === "pruebatopicoT") {
 		
 		let response = JSON.parse(message.payloadString);
 		dataFormat = response;
@@ -39,6 +39,11 @@ client.onMessageArrived = function (message) {
 		let dataNucle = dataFormat.Nucle;
 		let dataArqM = dataFormat.ArqM;
 		let dataUsr = dataFormat.Usr;
+
+		let dataID=dataFormat.bateria_id;
+		let dataPorcentaje=dataFormat.bateria_porcentaje;
+		let dataEstado=dataFormat.estado_bateria;
+		let dataVoltaje=dataFormat.voltaje;
 		
 		addData(
 			CPU,
@@ -88,7 +93,34 @@ client.onMessageArrived = function (message) {
 		//Usuario
 		let dateUsr = dataUsr.toLocaleString();
 		document.getElementById('usrValue').innerText = dateUsr;
+		//Datos de la bateria
+		let dateID = dataID.toLocaleString();
+        document.getElementById('IDValue').innerText = dateID;
+
+		let datePorcentaje = dataPorcentaje.toLocaleString() + ' %';
+        document.getElementById('porcentajeValue').innerText = datePorcentaje;
+
+		let dateEstado = dataEstado.toLocaleString();
+        document.getElementById('estadoValue').innerText = dateEstado;
+
+		let dateVoltaje = dataVoltaje.toLocaleString() + ' V';
+        document.getElementById('voltValue').innerText = dateVoltaje;
+
+		//NOTIFICACION POPUP
+		const cpuValueElement = document.getElementById("cpuValue");
+		const cpuValue = parseFloat(cpuValueElement.textContent);
+		if (cpuValue > 90) {
+		// Mostrar la notificación popup
+			Swal.fire({
+				icon: " !! PELIGRO !! ",
+				title: "USO DE CPU DEMASIADO ALTO",
+				text: `El porcentaje de uso de la CPU ha excedido el 90% (${cpuValue}%).`,
+				confirmButtonText: "Cerrar",
+			});
+		}
+
 	}
+
 };
 
 var options = {
@@ -96,7 +128,7 @@ var options = {
 	onSuccess: function () {
 		console.log("mqtt connected");
 		// Connection succeeded; subscribe to our topic, you can add multile lines of these
-		client.subscribe("pruebatopico", { qos: 1 });
+		client.subscribe("pruebatopicoT", { qos: 1 });
 	},
 	onFailure: function (message) {
 		console.log("Connection failed: " + message.errorMessage);

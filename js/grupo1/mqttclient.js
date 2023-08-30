@@ -36,6 +36,13 @@ client.onMessageArrived = function (message) {
         let dataMemoria = dataFormat.Memoria;
         let dataDisco = dataFormat.Disco;
         let dataRecepcion = dataFormat.Recepcion;
+        
+        //info pc
+        document.getElementById("arquitecturaValue").innerText = response.Arquitectura;
+        document.getElementById("sistemaValue").innerText = response.Sistema;
+        document.getElementById("ramValue").innerText = response.Ram;
+        document.getElementById("procesadorValue").innerText = response.Procesador;
+        document.getElementById("almacenamientoValue").innerText = response.Almacenamiento;
 
         // Calcular la diferencia con respecto al valor anterior
         let diffCPU = dataCPU - prevCPUValue;
@@ -56,11 +63,10 @@ client.onMessageArrived = function (message) {
         document.getElementById("RecepcionValue").innerText = dataRecepcion;
 
         // Actualizar los porcentajes en la página
-        document.getElementById("cpuPercentage").innerText = percentageCPU + "%";
-        document.getElementById("memoryPercentage").innerText = percentageMemory + "%";
-        document.getElementById("diskPercentage").innerText = percentageDisk + "%";
-        document.getElementById("RecepcionPercentage").innerText = percentageRecepcion + "%";
-
+        document.getElementById("cpuPercentage").innerHTML = getColoredPercentage(percentageCPU);
+        document.getElementById("memoryPercentage").innerHTML = getColoredPercentage(percentageMemory);
+        document.getElementById("diskPercentage").innerHTML = getColoredPercentage(percentageDisk);
+        document.getElementById("RecepcionPercentage").innerHTML = getColoredPercentage(percentageRecepcion);
 
         // Actualizar los valores anteriores con los nuevos valores
         prevCPUValue = dataCPU;
@@ -86,6 +92,16 @@ function calculatePercentage(diff, prevValue) {
         return percentage >= 0 ? "+" + percentage : percentage;
     } else {
         return "0";
+    }
+}
+// Función para obtener el porcentaje coloreado
+function getColoredPercentage(percentage) {
+    if (parseFloat(percentage) > 0) {
+        return '<span style="color: green;">' + percentage + '%</span>';
+    } else if (parseFloat(percentage) < 0) {
+        return '<span style="color: red;">' + percentage + '%</span>';
+    } else {
+        return percentage + '%';
     }
 }
 

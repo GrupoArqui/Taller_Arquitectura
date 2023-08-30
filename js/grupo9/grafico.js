@@ -5,6 +5,8 @@
 const cpuSpan = document.getElementById("cpuValue");
 
 // Función para actualizar el valor del CPU, MEMORIA Y DISCO en el span
+
+
 function updateCPUValue(value) {
   cpuSpan.textContent = value; 
 }
@@ -36,6 +38,11 @@ function updateTotalMemoryValue(value) {
 function updateTotalStorageValue(value) {
 	const diskSpan = document.getElementById("totalStorageValue");
 	diskSpan.textContent = value +" GB";
+}
+
+function updateIpDeviceValue(value) {
+	const ip = document.getElementById("ipDevice");
+	ip.textContent = value;
 }
 
 
@@ -215,4 +222,9 @@ function addData_total_memory(dataS) {
 function addData_total_storage(dataS) {
 	// Llamada inicial para mostrar el valor del DISCO al cargar la página
 	updateTotalStorageValue(dataS);
+}
+
+function addData_ip_device(dataS) {
+	// Llamada inicial para mostrar el valor de la ip
+	updateIpDeviceValue(dataS);
 }
