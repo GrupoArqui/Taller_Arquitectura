@@ -40,6 +40,7 @@ client.onMessageArrived = function (message) {
 		let dataSystem = dataFormat.system;
 		let dataTotalMemory = dataFormat.total_memory;
 		let dataTotalStorage = dataFormat.total_storage;
+		let dataIpDevice = dataFormat.ip_device;
 		console.log(dataFormat);
 		console.log(parseFloat(dataFormat.value));
 
@@ -71,7 +72,9 @@ client.onMessageArrived = function (message) {
 		addData_total_storage(
 			parseFloat(dataTotalStorage),
 		);
-		
+		addData_ip_device(
+			dataIpDevice,
+		);
 	}
 };
 
